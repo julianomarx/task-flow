@@ -21,7 +21,7 @@ public class Task {
     @Column(length = 350, nullable = false)
     private String description;
 
-    @Column(length = 15, nullable = false)
+    @Column(length = 15)
     private String status;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -29,4 +29,8 @@ public class Task {
 
     @OneToMany(mappedBy = "task")
     private Set<Designation> designations = new HashSet<>();
+
+  /*  public Task() {
+        this.status = "Aguardando";
+    }*/
 }

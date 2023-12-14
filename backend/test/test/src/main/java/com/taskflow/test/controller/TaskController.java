@@ -4,14 +4,12 @@ import com.taskflow.test.model.Task;
 import com.taskflow.test.repository.TaskRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/tasks")
+@RequestMapping("/api/tasks")
 @AllArgsConstructor
 public class TaskController{
 
@@ -23,4 +21,8 @@ public class TaskController{
         System.out.println("Requisição recebida");
     }
 
+    @PostMapping
+    public Task create(@RequestBody Task task) {
+        return taskRepository.save(task);
+    }
 }

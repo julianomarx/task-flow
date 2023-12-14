@@ -1,1 +1,33 @@
-<p>tasks-form works!</p>
+  <mat-toolbar>Cadastrar tarefa</mat-toolbar>
+
+    <mat-card class="card">
+      <mat-card-content class="">
+
+        <form [formGroup]="form" class="full-width">
+
+          <mat-form-field class="full-width">
+            <mat-label>Número do ticket</mat-label>
+            <input matInput formControlName="ticketNumber">
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <mat-label>Descrição</mat-label>
+            <input matInput formControlName="description">
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <mat-label>Status</mat-label>
+            <input id="teste" matInput formControlName="status">
+          </mat-form-field>
+
+        </form>
+
+      </mat-card-content>
+
+      <mat-card-actions>
+
+        <button mat-raised-button (click)="onSubmit()" color="primary">Salvar</button>
+        <button mat-raised-button (click)="onCancel()">Cancelar</button>
+
+      </mat-card-actions>
+    </mat-card>

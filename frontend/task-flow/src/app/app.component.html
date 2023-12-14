@@ -1,4 +1,22 @@
-<mat-toolbar>
+<mat-toolbar color="primary" class="toolbar">
   <span>Whiteboard / </span>
 </mat-toolbar>
-<router-outlet></router-outlet>
+
+<mat-drawer-container class="container">
+  <mat-drawer mode="side" opened>
+
+    <div class="sidenav-header">
+      <h2>
+        Menu
+      </h2>
+    </div>
+
+    <app-sidenav></app-sidenav>
+
+  </mat-drawer>
+  <mat-drawer-content>
+
+    <router-outlet></router-outlet>
+
+  </mat-drawer-content>
+</mat-drawer-container>
